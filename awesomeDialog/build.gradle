@@ -1,17 +1,16 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 group = 'noumanch.dev'
 version = '1.0.0'
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.0"
+    compileSdk 31
+    buildToolsVersion "30.0.3"
 
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 30
+        minSdk 15
+        targetSdk 31
         versionCode 1
         versionName "1.0"
 

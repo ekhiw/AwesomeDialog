@@ -7,17 +7,12 @@ import android.view.View
 import android.view.animation.AnimationUtils
 import android.widget.RelativeLayout
 import androidx.appcompat.app.AlertDialog
+import com.example.awesomedialog.AwDialogUtils.show
 import kotlinx.android.synthetic.main.awesome_dilaog.*
 
 
 class AwesomeDialog {
 
-    /***
-     * Positions For Alert Dialog
-     * */
-    enum class POSITIONS {
-        CENTER, BOTTOM
-    }
 
     companion object {
 
@@ -80,12 +75,12 @@ fun AlertDialog.background(
  * Positions of Alert Dialog
  * */
 fun AlertDialog.position(
-    position: AwesomeDialog.POSITIONS = AwesomeDialog.POSITIONS.BOTTOM
+    position: AwDialogUtils.POSITIONS = AwDialogUtils.POSITIONS.BOTTOM
 ): AlertDialog {
     val layoutParams = mainLayout.layoutParams as RelativeLayout.LayoutParams
-    if (position == AwesomeDialog.POSITIONS.CENTER) {
+    if (position == AwDialogUtils.POSITIONS.CENTER) {
         layoutParams.addRule(RelativeLayout.CENTER_VERTICAL, RelativeLayout.TRUE)
-    } else if (position == AwesomeDialog.POSITIONS.BOTTOM) {
+    } else if (position == AwDialogUtils.POSITIONS.BOTTOM) {
         layoutParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, RelativeLayout.TRUE)
     }
     mainLayout!!.layoutParams = layoutParams
@@ -180,6 +175,3 @@ fun AlertDialog.onNegative(
     return this
 }
 
-private fun View.show() {
-    this.visibility = View.VISIBLE
-}
